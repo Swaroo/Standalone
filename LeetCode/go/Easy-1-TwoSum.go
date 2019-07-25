@@ -1,3 +1,7 @@
+package main
+
+import "fmt"
+
 func twoSum(nums []int, target int) []int {
     var out [2]int
     var m map[int]int
@@ -12,4 +16,10 @@ func twoSum(nums []int, target int) []int {
         }
     }
     return out[:]
+}
+
+func main(){
+    nums := []int{1,2,3,4}
+    target := 7
+    fmt.Println(twoSum(nums,target))
 }
