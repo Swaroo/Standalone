@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+//@Todo: Improve by calculating reversed integer till half
 func isPalindrome(x int) bool {
 	if x < 0 {
 		return false
