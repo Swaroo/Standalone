@@ -1,0 +1,26 @@
+//Whenever you have to adjust an array in-place
+//The trick is to **start from the last position**,
+//Otherwise if started from the initial positions, 
+//we'll have to move arrays in entirety to fit in a new element
+func merge(nums1 []int, m int, nums2 []int, n int)  {
+    pos1 := m-1
+    pos2 := n-1
+    pos := m+n-1
+    for pos1 != -1 && pos2 != -1{
+        if nums1[pos1]>=nums2[pos2]{
+            nums1[pos]=nums1[pos1]
+            pos1--
+        }else{
+            nums1[pos]=nums2[pos2]
+            pos2--
+        }
+        pos--
+    }
+    if pos1 == -1{
+        for pos2 != -1{
+            nums1[pos]=nums2[pos2]
+            pos--
+            pos2--
+        }
+    } 
+}
